@@ -7,6 +7,7 @@ function tri_fusion ($tab, &$ord) {
 }
 
 function trier($tab){
+    if(count($tab) == 1 ) return $tab;
     $middle = count($tab) / 2;
 
     $left = array_slice($tab, 0, $middle);

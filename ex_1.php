@@ -61,6 +61,7 @@ function chemin_court($liste_points, $point_depart = false, $point_arrivee = fal
 
         elseif (!array_key_exists($point_depart, $liste_points) || !array_key_exists($point_arrivee, $liste_points)) return [];
         elseif ($point_arrivee == $point_depart ) return [];
+
         $start = $liste_points[$point_depart];
         $end = $liste_points[$point_arrivee];
         $count = count($liste_points);
