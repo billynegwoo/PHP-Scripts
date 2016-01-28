@@ -1,15 +1,22 @@
 <?php
-function tri_fusion ( $tab , &$ord ) {
+function tri_fusion ($tab, &$ord) {
 
+    $ord = trier($tab);
+
+
+}
+
+function trier($tab){
     $middle = count($tab) / 2;
+
     $left = array_slice($tab, 0, $middle);
+
     $right = array_slice($tab,$middle);
 
-    $left = tri_fusion($left,$right);
-    $right = tri_fusion($right,$right);
+    $left = trier($left);
+    $right = trier($right);
 
     return fusionner($left,$right);
-
 }
 
 function fusionner($left, $right){
@@ -34,7 +41,7 @@ function fusionner($left, $right){
     return $result;
 }
 
-$test = [1,3,2,8,9,6,5];
+$test = [1,3,2,8,9,6,5,7];
 $test1 = [];
 tri_fusion($test, $test1);
 
