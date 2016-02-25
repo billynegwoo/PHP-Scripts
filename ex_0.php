@@ -7,3 +7,27 @@ function is_prime($nbr)
             return false;
     return true;
 }
+
+class test {
+
+
+
+}
+
+function is_palindrome($string) {
+    return $string == strrev($string);
+}
+$palindromes = [];
+
+for($i = 999; $i > 900; $i--){
+    for($j = 999; $j > 900; $j--) {
+        for($k = 999; $k > 900 ; $k--){
+            if (is_palindrome($i * $j * $k)) {
+                $palindromes[] = $i . "*" . $j . "*" . $k ." = ". $i * $j * $k;
+                break 3;
+            }
+        }
+    }
+};
+
+echo $palindromes[0];

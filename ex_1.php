@@ -16,7 +16,7 @@ class short_way
 
     public function permute($items, $perms = array(), $result = array())
     {
-        if (empty($items) && $perms[0][0] == $this->start && $perms[$this->count - 1] == [$this->end]) {
+        if (empty($items) && $perms[0][0] == $this->start && $perms[$this->count - 1][0] == $this->end) {
             $result[] = $perms;
         } else {
             for ($i = 0; $i < count($items); ++$i) {
@@ -75,6 +75,7 @@ function chemin_court($liste_points, $point_depart = false, $point_arrivee = fal
                     $dist += $short_way->distance($result[$i][0], $result[$i + 1][0]);
                 }
             }
+            var_dump($dist);
             $test[$dist] = $result;
             $dist = 0;
         }

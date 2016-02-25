@@ -41,9 +41,3 @@ function fusionner($left, $right){
     }
     return $result;
 }
-
-$test = [1,3,2,8,9,6,5,7];
-$test1 = [];
-tri_fusion($test, $test1);
-
-var_dump($test1);
